@@ -153,3 +153,59 @@ background-color: #0ad2ff32;
 justify-self: center;
 
 }
+
+h1, h2 {
+  transition: 
+    color 0.6s cubic-bezier(.68,-0.55,.27,1.55),
+    background 0.6s cubic-bezier(.68,-0.55,.27,1.55),
+    transform 0.6s cubic-bezier(.68,-0.55,.27,1.55),
+    box-shadow 0.6s cubic-bezier(.68,-0.55,.27,1.55);
+  box-shadow: 0 4px 24px rgba(67,59,156,0.15);
+  will-change: transform, color, background;
+}
+
+h1:hover, h2:hover {
+  color: #fff;
+  background: linear-gradient(90deg, #433b9c 0%, #5959c2 100%);
+  transform: scale(1.08) rotate(-2deg);
+  box-shadow: 0 8px 32px rgba(67,59,156,0.25);
+  letter-spacing: 2px;
+}
+
+@keyframes h1Entrance {
+  0% {
+    opacity: 0;
+    transform: translateY(-60px) scale(0.8) skewX(-10deg);
+  }
+  80% {
+    opacity: 1;
+    transform: translateY(10px) scale(1.05) skewX(2deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1) skewX(0deg);
+  }
+}
+
+@keyframes h2Entrance {
+  0% {
+    opacity: 0;
+    transform: translateY(60px) scale(0.8) skewX(10deg);
+  }
+  80% {
+    opacity: 1;
+    transform: translateY(-10px) scale(1.05) skewX(-2deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1) skewX(0deg);
+  }
+}
+
+h1 {
+  animation: h1Entrance 1s cubic-bezier(.68,-0.55,.27,1.55) both;
+}
+
+h2 {
+  animation: h2Entrance 1s cubic-bezier(.68,-0.55,.27,1.55) both;
+}
